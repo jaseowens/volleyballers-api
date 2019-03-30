@@ -1,0 +1,72 @@
+//User model definition
+//Requirements:
+const Sequelize = require('sequelize');
+const config = require('../config/config');
+const bcrypt = require('bcrypt');
+
+//Instantiate sequelize, and connect to db
+//{dbname, user, password}
+var sequelize = new Sequelize(config.db_name,config.db_user,config.db_password,{
+    //sequelize can be used with many db languages, for this project, psql
+    dialect: 'postgres',
+    //host of the db
+    host: config.db_host
+});
+
+sequelize
+    .authenticate()
+    .then(() => {
+        console.log("Successfully connected to Game table");
+    })
+    .catch(() =>{
+        console.log("Something went wrong connecting to Game table");
+    });
+
+//Define user
+var Game = sequelize.define('game', {
+    id:{
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false
+    },
+    //Username column
+    date: {
+        type: Sequelize.DATE,
+        allowNull: false
+    },
+    //password column
+    score: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    winningTeamID: {
+        type: Sequelize.INTEGER,
+        allowNull: true
+    },
+    losingTeamID: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    videoURL: {
+        type: Sequelize.STRING,
+        allowNull: true
+    }
+});
+
+// force: true will drop the table if it already exists
+Game.sync({force: true}).then(() => {
+// Table created
+    Game.create(
+        {
+            date: '03/29/2019',
+            score: '21-18',
+            winningTeamID: '1',
+            losingTeamID: '2',
+            videoURL: 'https://www.youtube.com/watch?v=cZj4tUp2DhQ'
+        }
+    );
+console.log("Created Game table and test Game");
+});
+
+module.exports = Game;
