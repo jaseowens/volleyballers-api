@@ -40,6 +40,9 @@ var Player = sequelize.define('player', {
         type: Sequelize.STRING,
         allowNull: false
     },
+    displayName: {
+        type: Sequelize.STRING
+    },
     profileImage: {
         type: Sequelize.STRING,
         allowNull: true
@@ -59,6 +62,7 @@ Player.sync({force: true}).then(() => {
                 {
                     username: 'dev',
                     password: hash,
+                    displayName: 'Jase Owens - Dev',
                     profileImage: '/uploads/dev.jpg',
                     role: 'DEVELOPER'
                 }
@@ -74,6 +78,7 @@ Player.sync({force: true}).then(() => {
                 {
                     username: 'reg',
                     password: hash,
+                    displayName: 'Jase Owens - Reg',
                     profileImage: '/uploads/reg.jpg',
                     role: 'REGULAR'
                 }
