@@ -19,7 +19,14 @@ playerRoutes.get('/get', function(req,res) {
     })
     .then((player) => {
         //console.log('found game');
-        res.json(player);
+        res.send({
+            id: player.id,
+            username: player.username,
+            displayName: player.displayName,
+            profileImage: player.profileImage,
+            role: player.role,
+            createdAt: player.createdAt
+        });
     })
     .catch(err => {
         //console.log(err);
