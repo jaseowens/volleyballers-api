@@ -2,6 +2,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 var jwt = require('jsonwebtoken');
 var config = require('../config/config')
 const gameRoutes = express.Router();
@@ -63,6 +65,45 @@ gameRoutes.get('/get', function(req,res) {
     })
     .catch(err => {
         //console.log(err);
+        res.json({message: err});
+    });
+});
+
+//http://localhost:8080/api/game/getAllGames?{playerID}
+gameRoutes.get('/getAllGames', function(req,res) {
+    let playerID = req.query.playerID;
+    playerID = JSON.parse("[" + playerID + "]");
+    Game.findAll({
+        where: {
+            [Op.or]: 
+                [
+                    {
+                        winningTeamPlayers: {
+                            [Op.contains]: playerID
+                        }
+                    }, 
+                    {
+                        losingTeamPlayers: {
+                            [Op.contains]: playerID
+                        }
+                    }
+                ]
+            // [Op.or]: {
+            //     winningTeamID: {
+            //         [Op.contains]: playerID
+            //     },
+            //     losingTeamID: {
+            //         [Op.contains]: playerID
+            //     }
+            //   }
+        }
+    })
+    .then((games) => {
+        //console.log('found game');
+        res.json(games);
+    })
+    .catch(err => {
+        console.log(err);
         res.json({message: err});
     });
 });

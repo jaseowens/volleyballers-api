@@ -44,8 +44,24 @@ var Game = sequelize.define('game', {
         type: Sequelize.INTEGER,
         allowNull: true
     },
+    winningTeamName: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    winningTeamPlayers: {
+        type: Sequelize.ARRAY(Sequelize.INTEGER),
+        allowNull: false
+    },
     losingTeamID: {
         type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    losingTeamName: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    losingTeamPlayers: {
+        type: Sequelize.ARRAY(Sequelize.INTEGER),
         allowNull: false
     },
     videoURL: {
@@ -62,7 +78,24 @@ Game.sync({force: true}).then(() => {
             date: '03/29/2019',
             score: '21-18',
             winningTeamID: '1',
+            winningTeamName: 'Volley Llamas',
+            winningTeamPlayers: [1,2,3,4,5,6],
             losingTeamID: '2',
+            losingTeamName: 'Will Keith Wreckers',
+            losingTeamPlayers: [7,8,9,10,11,12],
+            videoURL: 'https://www.youtube.com/watch?v=cZj4tUp2DhQ'
+        }
+    );
+    Game.create(
+        {
+            date: '03/26/2019',
+            score: '21-10',
+            winningTeamID: '1',
+            winningTeamName: 'Volley Llamas',
+            winningTeamPlayers: [1,2,3,4,5,6],
+            losingTeamID: '2',
+            losingTeamName: 'Will Keith Wreckers',
+            losingTeamPlayers: [7,8,9,10,11,12],
             videoURL: 'https://www.youtube.com/watch?v=cZj4tUp2DhQ'
         }
     );

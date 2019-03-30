@@ -45,7 +45,13 @@ Team.sync({force: true}).then(() => {
     Team.create(
         {
             players: [1,2,3],
-            teamName: 'Test team'
+            teamName: 'Will Keith Wreckers'
+        }
+    );
+    Team.create(
+        {
+            players: [1,2,3],
+            teamName: 'Volley Llamas'
         }
     );
 console.log("Created Team table and test Team");

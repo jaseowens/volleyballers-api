@@ -19,11 +19,13 @@ apiRoutes.use(function(req, res, next) {
     next();
 });
 
-//Import user routes
-//const playerRoutes = require('./player')
-//apiRoutes.use('/player', playerRoutes);
+//Import routes
+const playerRoutes = require('./player')
+apiRoutes.use('/player', playerRoutes);
 const gameRoutes = require('./game')
 apiRoutes.use('/game', gameRoutes);
+const teamRoutes = require('./team')
+apiRoutes.use('/team', teamRoutes);
 
 //http://localhost:8080/api/authenticate
 apiRoutes.post('/authenticate', function(req,res){
