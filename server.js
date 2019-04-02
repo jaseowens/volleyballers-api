@@ -74,7 +74,7 @@ app.post('/signup', function(req,res){
                         const payload = {
                             //Payload needs to contain min amount of info for security purposes
                             username: player.username,
-                            id: player.userid
+                            id: player.id
                         };
                         //use jwt to sign the token with our payload and secret defined in the config file.
                         var token = jwt.sign(payload, config.secret, {
@@ -84,10 +84,10 @@ app.post('/signup', function(req,res){
                         res.json({
                             //Send JSON back to the requestor with success msg, and token
                             success: true,
-                            message: 'Token provided',
+                            message: 'Token provided to you',
                             token: token,
                             username: player.username,
-                            user_id: player.userid
+                            user_id: player.id
                         });
                     });
                     player.catch(err => {

@@ -72,6 +72,7 @@ gameRoutes.get('/get', function(req,res) {
 //http://localhost:8080/api/game/getAllGames?{playerID}
 gameRoutes.get('/getAllGames', function(req,res) {
     let playerID = req.query.playerID;
+    playerID = parseInt(playerID);
     playerID = JSON.parse("[" + playerID + "]");
     Game.findAll({
         where: {

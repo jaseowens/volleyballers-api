@@ -75,28 +75,15 @@ Game.sync({force: true}).then(() => {
 // Table created
     Game.create(
         {
-            date: '03/29/2019',
-            score: '21-18',
+            date: '03/31/2019',
+            score: '25-23',
             winningTeamID: '1',
-            winningTeamName: 'Volley Llamas',
-            winningTeamPlayers: [1,2,3,4,5,6],
+            winningTeamName: 'Practice Team 1',
+            winningTeamPlayers: [3,2,1,4,5,6],
             losingTeamID: '2',
-            losingTeamName: 'Will Keith Wreckers',
-            losingTeamPlayers: [7,8,9,10,11,12],
-            videoURL: 'https://www.youtube.com/watch?v=cZj4tUp2DhQ'
-        }
-    );
-    Game.create(
-        {
-            date: '03/26/2019',
-            score: '21-10',
-            winningTeamID: '1',
-            winningTeamName: 'Volley Llamas',
-            winningTeamPlayers: [1,2,3,4,5,6],
-            losingTeamID: '2',
-            losingTeamName: 'Will Keith Wreckers',
-            losingTeamPlayers: [7,8,9,10,11,12],
-            videoURL: 'https://www.youtube.com/watch?v=cZj4tUp2DhQ'
+            losingTeamName: 'Practice Team 2',
+            losingTeamPlayers: [7,8,9,10,11],
+            videoURL: 'https://www.youtube.com/watch?v=vKDTaRttshM'
         }
     );
 console.log("Created Game table and test Game");
