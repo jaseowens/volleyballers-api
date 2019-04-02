@@ -114,6 +114,12 @@ app.post('/signup', function(req,res){
     });
 });
 
+app.get('/', function(req,res){
+    res.send({
+        success: true,
+        message: 'Volleyballers API'
+    });
+});
 //Set the app to listen on port defined above.
 app.listen(port);
 console.log("Listening on " + port);
