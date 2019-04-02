@@ -45,7 +45,8 @@ var Player = sequelize.define('player', {
     },
     profileImage: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: '/uploads/unknownUser.svg'
     },
     role: {
         type: Sequelize.STRING,
@@ -54,41 +55,9 @@ var Player = sequelize.define('player', {
 });
 
 // force: true will drop the table if it already exists
-Player.sync({force: true}).then(() => {
+Player.sync().then(() => {
 // Table created
-    bcrypt.hash('dev', 10).then(function(hash){
-        try{
-            Player.create(
-                {
-                    username: 'dev',
-                    password: hash,
-                    displayName: 'Jase Owens - Dev',
-                    profileImage: '/uploads/dev.jpg',
-                    role: 'DEVELOPER'
-                }
-            )
-            console.log("Developer Player created")
-        } catch (err){
-            console.log("something went wrong making developer player");
-        }
-    });
-    bcrypt.hash('reg', 10).then(function(hash){
-        try{
-            let dev = Player.create(
-                {
-                    username: 'reg',
-                    password: hash,
-                    displayName: 'Jase Owens - Reg',
-                    profileImage: '/uploads/reg.jpg',
-                    role: 'REGULAR'
-                }
-            )
-            console.log("Regular User created")
-        } catch (err){
-            console.log("something went wrong making regular player");
-        }
-    });
-console.log("Created player table and test users");
+console.log("Created player table");
 });
 
 module.exports = Player;

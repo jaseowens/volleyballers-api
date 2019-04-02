@@ -18,15 +18,22 @@ playerRoutes.get('/get', function(req,res) {
         }
     })
     .then((player) => {
-        //console.log('found game');
-        res.send({
-            id: player.id,
-            username: player.username,
-            displayName: player.displayName,
-            profileImage: player.profileImage,
-            role: player.role,
-            createdAt: player.createdAt
-        });
+        if(player){
+            res.send({
+                success: true,
+                id: player.id,
+                username: player.username,
+                displayName: player.displayName,
+                profileImage: player.profileImage,
+                role: player.role,
+                createdAt: player.createdAt
+            });
+        } else{
+            res.send({
+                success: false,
+                message: 'No player found with that id'
+            });
+        }
     })
     .catch(err => {
         //console.log(err);
