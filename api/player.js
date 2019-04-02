@@ -8,10 +8,10 @@ const playerRoutes = express.Router();
 const Player = require('../models/player');
 const Common = require('../Common');
 
-//http://localhost:8080/api/game/get?{playerID}
+//http://localhost:8080/api/player/get?{playerID}
 playerRoutes.get('/get', function(req,res) {
     let playerID = req.query.playerID;
-
+    console.log('recieved request');
     Player.findOne({
         where: {
             id: playerID
@@ -37,7 +37,9 @@ playerRoutes.get('/get', function(req,res) {
     })
     .catch(err => {
         //console.log(err);
-        res.json({message: err});
+        res.json({
+            success: false,
+            message: err});
     });
 });
 

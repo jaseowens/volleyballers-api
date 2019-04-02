@@ -51,6 +51,7 @@ var port = process.env.PORT || 8080;
 app.post('/signup', function(req,res){
     var username = req.body.username;
     var password = req.body.password;
+    var displayName = req.body.displayName;
 
     Player.findOne({ where: {username: username} })
     .then(player => {
@@ -66,6 +67,7 @@ app.post('/signup', function(req,res){
                         {
                             username: username,
                             password: hash,
+                            displayName: displayName,
                             role: 'REGULAR'
                         }
                     )
