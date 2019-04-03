@@ -76,7 +76,7 @@ Game.sync({force: true}).then(() => {
     Game.create(
         {
             date: '04/02/2019',
-            score: ['25-22','20-25','13-15'],
+            score: ['25-22','20-25','15-13'],
             winningTeamID: '1',
             winningTeamName: 'Will Keith Wreckers',
             winningTeamPlayers: [1,2,3,4,5,6],
