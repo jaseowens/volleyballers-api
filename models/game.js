@@ -37,7 +37,7 @@ var Game = sequelize.define('game', {
     },
     //password column
     score: {
-        type: Sequelize.STRING,
+        type: Sequelize.ARRAY(Sequelize.STRING),
         allowNull: false
     },
     winningTeamID: {
@@ -69,21 +69,21 @@ var Game = sequelize.define('game', {
         allowNull: true
     }
 });
-
+ 
 // force: true will drop the table if it already exists
 Game.sync({force: true}).then(() => {
 // Table created
     Game.create(
         {
-            date: '03/31/2019',
-            score: '25-23',
+            date: '04/02/2019',
+            score: ['25-22','20-25','13-15'],
             winningTeamID: '1',
-            winningTeamName: 'Practice Team 1',
-            winningTeamPlayers: [3,2,1,4,5,6],
+            winningTeamName: 'Will Keith Wreckers',
+            winningTeamPlayers: [1,2,3,4,5,6],
             losingTeamID: '2',
-            losingTeamName: 'Practice Team 2',
-            losingTeamPlayers: [7,8,9,10,11],
-            videoURL: 'https://www.youtube.com/watch?v=vKDTaRttshM'
+            losingTeamName: 'Thats What She Set',
+            losingTeamPlayers: [7,8,9,10,11,12],
+            videoURL: 'https://www.youtube.com/watch?v=yfqgUHyBrMY&feature=youtu.be'
         }
     );
 console.log("Created Game table and test Game");
