@@ -32,7 +32,7 @@ var Game = sequelize.define('game', {
     },
     //Username column
     date: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
         allowNull: false
     },
     //password column
