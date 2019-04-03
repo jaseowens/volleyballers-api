@@ -24,13 +24,6 @@ const Stats = require('./models/stats');
 //Secret for JWT
 app.set('superSecret', config);
 
-
-
-//Middleware for body parsing
-app.use(bodyParser.urlencoded({extended:false}));
-app.use(bodyParser.json());
-app.use('/uploads', express.static('uploads'));
-
 //Should let use localhost to connect to server, need to look into implications of
 //using this live.
 app.use(function(req, res, next) {
@@ -39,6 +32,11 @@ app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS')
     next();
 });
+
+//Middleware for body parsing
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
+app.use('/uploads', express.static('uploads'));
 
 //Import routes
 const apiRoutes = require('./api/api')
