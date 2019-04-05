@@ -26,6 +26,8 @@ const gameRoutes = require('./game')
 apiRoutes.use('/game', gameRoutes);
 const teamRoutes = require('./team')
 apiRoutes.use('/team', teamRoutes);
+const statRoutes = require('./stats')
+apiRoutes.use('/stats', statRoutes);
 
 //http://localhost:8080/api/authenticate
 apiRoutes.post('/authenticate', function(req,res){
