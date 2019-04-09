@@ -25,14 +25,22 @@ gameRoutes.post('/add', function(req,res) {
     let date = req.body.date;
     let score = req.body.score;
     let winningTeamID = req.body.winningTeamID;
+    let winningTeamName = req.body.winningTeamName;
+    let winningTeamPlayers = req.body.winningTeamPlayers;
     let losingTeamID = req.body.losingTeamID;
+    let losingTeamName = req.body.losingTeamName;
+    let losingTeamPlayers = req.body.losingTeamPlayers;
     let videoURL = req.body.videoURL;
 
     let game = Game.create({
         date: date,
         score: score,
         winningTeamID: winningTeamID,
+        winningTeamName: winningTeamName,
+        winningTeamPlayers: winningTeamPlayers,
         losingTeamID: losingTeamID,
+        losingTeamName: losingTeamName,
+        losingTeamPlayers: losingTeamPlayers,
         videoURL: videoURL
     })
     game.then((game) => {
@@ -131,16 +139,21 @@ gameRoutes.post('/delete', function(req,res) {
 //http://localhost:8080/api/game/update
 gameRoutes.post('/update', function(req,res) {
 
-    let gameId = req.body.gameId;
+    let id = req.body.id;
     let date = req.body.date;
     let score = req.body.score;
+    score = score.split(",");
     let winningTeamID = req.body.winningTeamID;
+    let winningTeamName = req.body.winningTeamName;
+    let winningTeamPlayers = req.body.winningTeamPlayers;
+    winningTeamPlayers = JSON.parse("[" + winningTeamPlayers + "]");
     let losingTeamID = req.body.losingTeamID;
+    let losingTeamName = req.body.losingTeamName;
+    let losingTeamPlayers = req.body.losingTeamPlayers;
+    losingTeamPlayers = JSON.parse("[" + losingTeamPlayers + "]");
     let videoURL = req.body.videoURL;
-    
-    console.log('Trying to update');
 
-    Game.findOne({ where: {id: gameId} })
+    Game.findOne({ where: {id: id} })
     .then(game => {
         //Take the result from that query
         if(!game){
@@ -153,7 +166,11 @@ gameRoutes.post('/update', function(req,res) {
                 date: date,
                 score: score,
                 winningTeamID: winningTeamID,
+                winningTeamName: winningTeamName,
+                winningTeamPlayers: winningTeamPlayers,
                 losingTeamID: losingTeamID,
+                losingTeamName: losingTeamName,
+                losingTeamPlayers: losingTeamPlayers,
                 videoURL: videoURL
             });
             res.send({message: 'succesfully updated'});
