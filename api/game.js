@@ -28,11 +28,11 @@ gameRoutes.post('/add', function(req,res) {
     let winningTeamID = req.body.winningTeamID;
     let winningTeamName = req.body.winningTeamName;
     let winningTeamPlayers = req.body.winningTeamPlayers;
-    winningTeamPlayers = JSON.parse("[" + winningTeamPlayers + "]");
+    winningTeamPlayers = winningTeamPlayers.split(',');
     let losingTeamID = req.body.losingTeamID;
     let losingTeamName = req.body.losingTeamName;
     let losingTeamPlayers = req.body.losingTeamPlayers;
-    losingTeamPlayers = JSON.parse("[" + losingTeamPlayers + "]");
+    losingTeamPlayers = losingTeamPlayers.split(',');
     let videoURL = req.body.videoURL;
 
     let game = Game.create({
@@ -141,11 +141,11 @@ gameRoutes.post('/update', function(req,res) {
     let winningTeamID = req.body.winningTeamID;
     let winningTeamName = req.body.winningTeamName;
     let winningTeamPlayers = req.body.winningTeamPlayers;
-    winningTeamPlayers = JSON.parse("[" + winningTeamPlayers + "]");
+    winningTeamPlayers = winningTeamPlayers.split(',');
     let losingTeamID = req.body.losingTeamID;
     let losingTeamName = req.body.losingTeamName;
     let losingTeamPlayers = req.body.losingTeamPlayers;
-    losingTeamPlayers = JSON.parse("[" + losingTeamPlayers + "]");
+    losingTeamPlayers = losingTeamPlayers.split(',');
     let videoURL = req.body.videoURL;
 
     Game.findOne({ where: {id: id} })

@@ -34,8 +34,8 @@ var Stats = sequelize.define('stats', {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    playerID: {
-        type: Sequelize.INTEGER,
+    playerUsername: {
+        type: Sequelize.STRING,
         allowNull: true
     },
     playerName: {
@@ -58,139 +58,155 @@ Stats.sync({force: true}).then(() => {
     Stats.bulkCreate([
         {
             gameID: 1,
-            playerID: 1,
+            playerUsername: 'jowens',
+            playerName: 'Jase Owens',
             type: 'KILL',
             total: 1
         },
         {
             gameID: 1,
-            playerID: 5,
+            playerUsername: 'jcox',
+            playerName: 'Jackie Cox',
             type: 'KILL',
             total: 7
         },
         {
             gameID: 1,
-            playerID: 6,
+            playerUsername: 'jwalker',
+            playerName: 'Joy Walker',
             type: 'KILL',
             total: 1
         },
         {
             gameID: 1,
-            playerID: 1,
+            playerUsername: 'jowens',
+            playerName: 'Jase Owens',
             type: 'SET',
             total: 2
         },
         {
             gameID: 1,
-            playerID: 2,
+            playerUsername: 'btaylor',
+            playerName: 'Brandon Taylor',
             type: 'SET',
             total: 1
         },
         {
             gameID: 1,
-            playerID: 4,
+            playerUsername: 'kgoodwin',
+            playerName: 'Katelyn Goodwin',
             type: 'SET',
             total: 6
         },
         {
             gameID: 1,
-            playerID: 2,
+            playerUsername: 'btaylor',
+            playerName: 'Brandon Taylor',
             type: 'BLOCK',
             total: 1
         },
         {
             gameID: 1,
-            playerID: 5,
+            playerUsername: 'jcox',
+            playerName: 'Jackie Cox',
             type: 'TIP',
             total: 2
         },
         {
             gameID: 1,
-            playerID: 6,
+            playerUsername: 'jwalker',
+            playerName: 'Joy Walker',
             type: 'TIP',
             total: 1
         },
         {
             gameID: 1,
-            playerID: 1,
+            playerUsername: 'jowens',
+            playerName: 'Jase Owens',
             type: 'UFE',
             total: 4
         },
         {
             gameID: 1,
-            playerID: 3,
+            playerUsername: 'ndalton',
+            playerName: 'Natalie Dalton',
             type: 'UFE',
             total: 5
         },
         {
             gameID: 1,
-            playerID: 3,
-            type: 'UFE',
-            total: 3
-        },
-        {
-            gameID: 1,
-            playerID: 4,
+            playerUsername: 'kgoodwin',
+            playerName: 'Katelyn Goodwin',
             type: 'UFE',
             total: 2
         },
         {
             gameID: 1,
-            playerID: 5,
+            playerUsername: 'jcox',
+            playerName: 'Jackie Cox',
             type: 'UFE',
             total: 15
         },
         {
             gameID: 1,
-            playerID: 6,
+            playerUsername: 'jwalker',
+            playerName: 'Joy Walker',
             type: 'UFE',
             total: 1
         },
         {
             gameID: 1,
-            playerID: 1,
+            playerUsername: 'jowens',
+            playerName: 'Jase Owens',
             type: 'ACE',
             total: 4
         },
         {
             gameID: 1,
-            playerID: 2,
+            playerUsername: 'btaylor',
+            playerName: 'Brandon Taylor',
             type: 'ACE',
             total: 1
         },
         {
             gameID: 1,
-            playerID: 3,
+            playerUsername: 'ndalton',
+            playerName: 'Natalie Dalton',
             type: 'ACE',
             total: 3
         },
         {
             gameID: 1,
-            playerID: 4,
+            playerUsername: 'kgoodwin',
+            playerName: 'Katelyn Goodwin',
             type: 'ACE',
             total: 1
         },
         {
             gameID: 1,
-            playerID: 5,
+            playerUsername: 'jcox',
+            playerName: 'Jackie Cox',
             type: 'ACE',
             total: 2
         },
         {
             gameID: 1,
-            playerID: 1,
+            playerUsername: 'jowens',
+            playerName: 'Jase Owens',
             type: 'DIG',
             total: 1
         },
         {
             gameID: 1,
-            playerID: 3,
+            playerUsername: 'ndalton',
+            playerName: 'Natalie Dalton',
             type: 'DIG',
             total: 4
         },
         {
             gameID: 1,
-            playerID: 4,
+            playerUsername: 'kgoodwin',
+            playerName: 'Katelyn Goodwin',
             type: 'DIG',
             total: 2
         }

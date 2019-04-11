@@ -19,7 +19,7 @@ statRoutes.get('/get', function(req,res) {
             type: type,
             gameID: gameID
         },
-        order: [['playerID','ASC']],
+        order: [['playerUsername','ASC']],
     })
     .then((stats) => {
         if(stats){
@@ -47,10 +47,9 @@ statRoutes.post('/add', function(req,res) {
     let gameID = req.body.gameID;
     gameId = parseInt(gameID);
 
-    let playerID = req.body.playerID;
-    playerID = parseInt(playerID);
+    let playerUsername = req.body.playerUsername;
 
-    let playerName = req.body.playerID;
+    let playerName = req.body.playerName;
 
     let type = req.body.type;
     type = type.toUppercase();
@@ -61,14 +60,14 @@ statRoutes.post('/add', function(req,res) {
     Stats.destroy({
         where:{
             gameID: gameID,
-            playerID: playerID,
+            playerUsername: playerUsername,
             type: type
         }
     })
 
     let stat = Stats.create({
         gameID: gameID,
-        playerID: playerID,
+        playerUsername: playerUsername,
         playerName: playerName,
         type: type,
         total: total
