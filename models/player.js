@@ -56,7 +56,7 @@ var Player = sequelize.define('player', {
 });
 
 // force: true will drop the table if it already exists
-Player.sync({force:true}).then(() => {
+Player.sync().then(() => {
 // Table created
 console.log("Created player table");
 });
