@@ -49,19 +49,19 @@ var Game = sequelize.define('game', {
         allowNull: false
     },
     winningTeamPlayers: {
-        type: Sequelize.ARRAY(Sequelize.INTEGER),
+        type: Sequelize.ARRAY(Sequelize.STRING),
         allowNull: false
     },
     losingTeamID: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: true
     },
     losingTeamName: {
         type: Sequelize.STRING,
         allowNull: false
     },
     losingTeamPlayers: {
-        type: Sequelize.ARRAY(Sequelize.INTEGER),
+        type: Sequelize.ARRAY(Sequelize.STRING),
         allowNull: false
     },
     videoURL: {
@@ -77,12 +77,12 @@ Game.sync({force: true}).then(() => {
         {
             date: '04/02/2019',
             score: ['25-22','20-25','15-13'],
-            winningTeamID: '1',
+            winningTeamID: 1,
             winningTeamName: 'Will Keith Wreckers',
-            winningTeamPlayers: [1,2,3,4,5,6],
-            losingTeamID: '2',
+            winningTeamPlayers: ['jowens','ndalton'],
+            losingTeamID: 2,
             losingTeamName: 'Thats What She Set',
-            losingTeamPlayers: [7,8,9,10,11,12],
+            losingTeamPlayers: [],
             videoURL: 'https://www.youtube.com/watch?v=yfqgUHyBrMY&feature=youtu.be'
         }
     );

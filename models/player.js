@@ -33,7 +33,8 @@ var Player = sequelize.define('player', {
     //Username column
     username: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     //password column
     password: {
@@ -55,7 +56,7 @@ var Player = sequelize.define('player', {
 });
 
 // force: true will drop the table if it already exists
-Player.sync({force: true}).then(() => {
+Player.sync().then(() => {
 // Table created
 console.log("Created player table");
 });

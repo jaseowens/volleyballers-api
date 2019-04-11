@@ -24,12 +24,15 @@ gameRoutes.post('/add', function(req,res) {
 
     let date = req.body.date;
     let score = req.body.score;
+    score = score.split(",");
     let winningTeamID = req.body.winningTeamID;
     let winningTeamName = req.body.winningTeamName;
     let winningTeamPlayers = req.body.winningTeamPlayers;
+    winningTeamPlayers = JSON.parse("[" + winningTeamPlayers + "]");
     let losingTeamID = req.body.losingTeamID;
     let losingTeamName = req.body.losingTeamName;
     let losingTeamPlayers = req.body.losingTeamPlayers;
+    losingTeamPlayers = JSON.parse("[" + losingTeamPlayers + "]");
     let videoURL = req.body.videoURL;
 
     let game = Game.create({
@@ -77,34 +80,26 @@ gameRoutes.get('/get', function(req,res) {
     });
 });
 
-//http://localhost:8080/api/game/getAllGames?{playerID}
+//http://localhost:8080/api/game/getAllGames?{username}
 gameRoutes.get('/getAllGames', function(req,res) {
-    let playerID = req.query.playerID;
-    playerID = parseInt(playerID);
-    playerID = JSON.parse("[" + playerID + "]");
+    let username = [req.query.username];
+    //username = JSON.parse("[" + username + "]");
+    console.log(`Finding games for user: ${username}`);
     Game.findAll({
         where: {
             [Op.or]: 
                 [
                     {
                         winningTeamPlayers: {
-                            [Op.contains]: playerID
+                            [Op.contains]: username
                         }
                     }, 
                     {
                         losingTeamPlayers: {
-                            [Op.contains]: playerID
+                            [Op.contains]: username
                         }
                     }
                 ]
-            // [Op.or]: {
-            //     winningTeamID: {
-            //         [Op.contains]: playerID
-            //     },
-            //     losingTeamID: {
-            //         [Op.contains]: playerID
-            //     }
-            //   }
         }
     })
     .then((games) => {

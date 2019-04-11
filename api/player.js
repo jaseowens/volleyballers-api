@@ -9,10 +9,44 @@ const Player = require('../models/player');
 const Stats = require('../models/stats');
 const Common = require('../Common');
 
-//http://localhost:8080/api/player/get?{playerID}
-playerRoutes.get('/get', function(req,res) {
+//http://localhost:8080/api/player/getByUsername?{username}
+playerRoutes.get('/getByUsername', function(req,res) {
+    console.log('recieved get byUsername request');
+    let username = req.query.username;
+    Player.findOne({
+        where: {
+            username: username
+        }
+    })
+    .then((player) => {
+        if(player){
+            res.send({
+                success: true,
+                id: player.id,
+                username: player.username,
+                displayName: player.displayName,
+                profileImage: player.profileImage,
+                role: player.role,
+                createdAt: player.createdAt
+            });
+        } else{
+            res.send({
+                success: false,
+                message: `No player found with username: ${username}`
+            });
+        }
+    })
+    .catch(err => {
+        //console.log(err);
+        res.json({
+            success: false,
+            message: err});
+    });
+});
+//http://localhost:8080/api/player/getById?{playerID}
+playerRoutes.get('/getById', function(req,res) {
     let playerID = parseInt(req.query.playerID);
-    console.log('recieved request');
+    console.log('recieved get byID request');
     Player.findOne({
         where: {
             id: playerID
@@ -32,7 +66,7 @@ playerRoutes.get('/get', function(req,res) {
         } else{
             res.send({
                 success: false,
-                message: 'No player found with that id'
+                message: `No player found with id: ${playerID}`
             });
         }
     })
@@ -44,15 +78,15 @@ playerRoutes.get('/get', function(req,res) {
     });
 });
 
-//http://localhost:8080/api/player/getMany?{playerIDs}
+//http://localhost:8080/api/player/getMany?{usernames}
 playerRoutes.get('/getMany', function(req,res) {
-    let playerIDs = JSON.parse("[" + req.query.playerIDs + "]");
+    let usernames = JSON.parse("[" + req.query.usernames + "]");
     //let playerIDs = JSON.parse(JSON.stringify(req.query.playerIDs));
-    console.log('recieved request');
+    console.log(usernames);
     Player.findAll({
         attributes: ['id', 'username', 'displayName', 'profileImage', 'role'],
         where: {
-            id: playerIDs
+            id: usernames
         }
     })
     .then((players) => {
@@ -63,7 +97,7 @@ playerRoutes.get('/getMany', function(req,res) {
         } else{
             res.send({
                 success: false,
-                message: 'No players found with those ids'
+                message: `No players found with usernames: ${usernames}`
             });
         }
     })
@@ -75,14 +109,21 @@ playerRoutes.get('/getMany', function(req,res) {
     });
 });
 
-//http://localhost:8080/api/player/getManyNames?{playerIDs}
+//http://localhost:8080/api/player/getManyNames?{usernames}
 playerRoutes.get('/getManyNames', function(req,res) {
-    let playerIDs = JSON.parse("[" + req.query.playerIDs + "]");
+    let usernames = req.query.usernames;
+    usernames = usernames.split(',');
+    for(var i = 0; i < usernames.length; i++){
+        usernames[i].trim();
+        console.log(`Looking for users name: ${username[i]}`);
+    }
+    console.log(`recievend get many names request`);
+    console.log(`usernames passed in: ${req.query.usernames}`);
 
     Player.findAll({
         attributes: ['displayName'],
         where: {
-            id: playerIDs
+            id: usernames
         },
         order: [['id','ASC']]
     })
@@ -94,7 +135,7 @@ playerRoutes.get('/getManyNames', function(req,res) {
         } else{
             res.send({
                 success: false,
-                message: 'No players found'
+                message: `No players found with usernames: ${usernames}`
             });
         }
     })

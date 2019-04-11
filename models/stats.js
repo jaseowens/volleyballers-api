@@ -38,6 +38,10 @@ var Stats = sequelize.define('stats', {
         type: Sequelize.INTEGER,
         allowNull: true
     },
+    playerName: {
+        type: Sequelize.STRING,
+        allowNull: true
+    },
     type: {
         type: Sequelize.STRING,
         allowNull: false

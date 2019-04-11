@@ -41,6 +41,51 @@ statRoutes.get('/get', function(req,res) {
     });
 });
 
+//http://localhost:8080/api/stats/add
+statRoutes.post('/add', function(req,res) {
+
+    let gameID = req.body.gameID;
+    gameId = parseInt(gameID);
+
+    let playerID = req.body.playerID;
+    playerID = parseInt(playerID);
+
+    let playerName = req.body.playerID;
+
+    let type = req.body.type;
+    type = type.toUppercase();
+
+    let total = req.body.total;
+    total = parseInt(total);
+
+    Stats.destroy({
+        where:{
+            gameID: gameID,
+            playerID: playerID,
+            type: type
+        }
+    })
+
+    let stat = Stats.create({
+        gameID: gameID,
+        playerID: playerID,
+        playerName: playerName,
+        type: type,
+        total: total
+    })
+    stat.then((stat) => {
+        //console.log('created new game');
+        res.json(
+            {
+                message: 'Succesfully added stat'
+            }
+    );
+    })
+    game.catch(err => {
+        //console.log(err);
+        res.json({message: err});
+    });
+});
 
 //Export this route so the main server can make use of.
 module.exports = statRoutes;
