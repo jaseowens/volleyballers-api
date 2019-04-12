@@ -399,6 +399,104 @@ Stats.sync({force: true}).then(() => {
             type: 'SET',
             total: 1
         },
+        {
+            gameID: 3,
+            playerUsername: 'tvaughn',
+            playerName: 'Tyler Vaughn',
+            type: 'KILL',
+            total: 3
+        },
+        {
+            gameID: 3,
+            playerUsername: 'tvaughn',
+            playerName: 'Tyler Vaughn',
+            type: 'UFE',
+            total: 2
+        },
+        {
+            gameID: 3,
+            playerUsername: 'arape',
+            playerName: 'Anna Rape',
+            type: 'KILL',
+            total: 1
+        },
+        {
+            gameID: 3,
+            playerUsername: 'arape',
+            playerName: 'Anna Rape',
+            type: 'SET',
+            total: 1
+        },
+        {
+            gameID: 3,
+            playerUsername: 'arape',
+            playerName: 'Anna Rape',
+            type: 'ACE',
+            total: 1
+        },
+        {
+            gameID: 3,
+            playerUsername: 'arape',
+            playerName: 'Anna Rape',
+            type: 'DIG',
+            total: 1
+        },
+        {
+            gameID: 3,
+            playerUsername: 'jorwalker',
+            playerName: 'Jordan Walker',
+            type: 'KILL',
+            total: 2
+        },
+        {
+            gameID: 3,
+            playerUsername: 'jorwalker',
+            playerName: 'Jordan Walker',
+            type: 'SET',
+            total: 1
+        },
+        {
+            gameID: 3,
+            playerUsername: 'jorwalker',
+            playerName: 'Jordan Walker',
+            type: 'TIP',
+            total: 1
+        },
+        {
+            gameID: 3,
+            playerUsername: 'jorwalker',
+            playerName: 'Jordan Walker',
+            type: 'ACE',
+            total: 2
+        },
+        {
+            gameID: 3,
+            playerUsername: 'jorwalker',
+            playerName: 'Jordan Walker',
+            type: 'BLOCK',
+            total: 4
+        },
+        {
+            gameID: 3,
+            playerUsername: 'awillingham',
+            playerName: 'Allison Willingham',
+            type: 'SET',
+            total: 1
+        },
+        {
+            gameID: 3,
+            playerUsername: 'awillingham',
+            playerName: 'Allison Willingham',
+            type: 'ACE',
+            total: 1
+        },
+        {
+            gameID: 3,
+            playerUsername: 'awillingham',
+            playerName: 'Allison Willingham',
+            type: 'UFE',
+            total: 2
+        }
     ]);
 console.log("Created Stats table and test Stats");
 });
