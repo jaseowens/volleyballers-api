@@ -71,7 +71,7 @@ var Game = sequelize.define('game', {
 });
  
 // force: true will drop the table if it already exists
-Game.sync({force: true}).then(() => {
+Game.sync().then(() => {
 // Table created
     Game.create(
         {
