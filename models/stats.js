@@ -209,7 +209,196 @@ Stats.sync({force: true}).then(() => {
             playerName: 'Katelyn Goodwin',
             type: 'DIG',
             total: 2
-        }
+        },
+        {
+            gameID: 2,
+            playerUsername: 'btaylor',
+            playerName: 'Brandon Taylor',
+            type: 'KILL',
+            total: 2
+        },
+        {
+            gameID: 2,
+            playerUsername: 'btaylor',
+            playerName: 'Brandon Taylor',
+            type: 'SET',
+            total: 1
+        },
+        {
+            gameID: 2,
+            playerUsername: 'btaylor',
+            playerName: 'Brandon Taylor',
+            type: 'TIP',
+            total: 2
+        },
+        {
+            gameID: 2,
+            playerUsername: 'btaylor',
+            playerName: 'Brandon Taylor',
+            type: 'UFE',
+            total: 1
+        },
+        {
+            gameID: 2,
+            playerUsername: 'btaylor',
+            playerName: 'Brandon Taylor',
+            type: 'DIG',
+            total: 1
+        },
+        {
+            gameID: 2,
+            playerUsername: 'jowens',
+            playerName: 'Jase Owens',
+            type: 'SET',
+            total: 2
+        },
+        {
+            gameID: 2,
+            playerUsername: 'jowens',
+            playerName: 'Jase Owens',
+            type: 'ACE',
+            total: 3
+        },
+        {
+            gameID: 2,
+            playerUsername: 'jowens',
+            playerName: 'Jase Owens',
+            type: 'UFE',
+            total: 1
+        },
+        {
+            gameID: 2,
+            playerUsername: 'ndalton',
+            playerName: 'Natalie Dalton',
+            type: 'KILL',
+            total: 1
+        },
+        {
+            gameID: 2,
+            playerUsername: 'ndalton',
+            playerName: 'Natalie Dalton',
+            type: 'SET',
+            total: 1
+        },
+        {
+            gameID: 2,
+            playerUsername: 'ndalton',
+            playerName: 'Natalie Dalton',
+            type: 'ACE',
+            total: 2
+        },
+        {
+            gameID: 2,
+            playerUsername: 'ndalton',
+            playerName: 'Natalie Dalton',
+            type: 'UFE',
+            total: 1
+        },
+        {
+            gameID: 2,
+            playerUsername: 'ndalton',
+            playerName: 'Natalie Dalton',
+            type: 'DIG',
+            total: 1
+        },
+        {
+            gameID: 2,
+            playerUsername: 'jcox',
+            playerName: 'Jackie Cox',
+            type: 'SET',
+            total: 1
+        },
+        {
+            gameID: 2,
+            playerUsername: 'jcox',
+            playerName: 'Jackie Cox',
+            type: 'TIP',
+            total: 4
+        },
+        {
+            gameID: 2,
+            playerUsername: 'jcox',
+            playerName: 'Jackie Cox',
+            type: 'BLOCK',
+            total: 1
+        },
+        {
+            gameID: 2,
+            playerUsername: 'jcox',
+            playerName: 'Jackie Cox',
+            type: 'UFE',
+            total: 4
+        },
+        {
+            gameID: 2,
+            playerUsername: 'jwalker',
+            playerName: 'Joy Walker',
+            type: 'KILL',
+            total: 2
+        },
+        {
+            gameID: 2,
+            playerUsername: 'jwalker',
+            playerName: 'Joy Walker',
+            type: 'SET',
+            total: 1
+        },
+        {
+            gameID: 2,
+            playerUsername: 'jwalker',
+            playerName: 'Joy Walker',
+            type: 'ACE',
+            total: 1
+        },
+        {
+            gameID: 2,
+            playerUsername: 'dwalker',
+            playerName: 'Darrell Walker',
+            type: 'KILL',
+            total: 2
+        },
+        {
+            gameID: 2,
+            playerUsername: 'dwalker',
+            playerName: 'Darrell Walker',
+            type: 'SET',
+            total: 1
+        },
+        {
+            gameID: 2,
+            playerUsername: 'dwalker',
+            playerName: 'Darrell Walker',
+            type: 'TIP',
+            total: 2
+        },
+        {
+            gameID: 2,
+            playerUsername: 'dwalker',
+            playerName: 'Darrell Walker',
+            type: 'ACE',
+            total: 1
+        },
+        {
+            gameID: 2,
+            playerUsername: 'dwalker',
+            playerName: 'Darrell Walker',
+            type: 'BLOCK',
+            total: 1
+        },
+        {
+            gameID: 2,
+            playerUsername: 'dwalker',
+            playerName: 'Darrell Walker',
+            type: 'UFE',
+            total: 7
+        },
+        {
+            gameID: 2,
+            playerUsername: 'kgoodwin',
+            playerName: 'Katelyn Goodwin',
+            type: 'SET',
+            total: 1
+        },
     ]);
 console.log("Created Stats table and test Stats");
 });
