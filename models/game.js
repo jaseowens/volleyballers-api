@@ -71,21 +71,21 @@ var Game = sequelize.define('game', {
 });
  
 // force: true will drop the table if it already exists
-Game.sync({force:true}).then(() => {
+Game.sync().then(() => {
 // Table created
-    Game.create(
-        {
-            date: '04/02/2019',
-            score: ['25-22','20-25','15-13'],
-            winningTeamID: 1,
-            winningTeamName: 'Will Keith Wreckers',
-            winningTeamPlayers: ['jowens','ndalton'],
-            losingTeamID: 2,
-            losingTeamName: 'Thats What She Set',
-            losingTeamPlayers: [],
-            videoURL: 'https://www.youtube.com/watch?v=yfqgUHyBrMY&feature=youtu.be'
-        }
-    );
+    // Game.create(
+    //     {
+    //         date: '04/02/2019',
+    //         score: ['25-22','20-25','15-13'],
+    //         winningTeamID: 1,
+    //         winningTeamName: 'Will Keith Wreckers',
+    //         winningTeamPlayers: ['jowens','ndalton'],
+    //         losingTeamID: 2,
+    //         losingTeamName: 'Thats What She Set',
+    //         losingTeamPlayers: [],
+    //         videoURL: 'https://www.youtube.com/watch?v=yfqgUHyBrMY&feature=youtu.be'
+    //     }
+    // );
 console.log("Created Game table and test Game");
 });
 
