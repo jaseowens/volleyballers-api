@@ -496,6 +496,272 @@ Stats.sync({force: true}).then(() => {
             playerName: 'Allison Willingham',
             type: 'UFE',
             total: 2
+        },
+        {
+            gameID: 4,
+            playerUsername: 'btaylor',
+            playerName: 'Brandon Taylor',
+            type: 'SET',
+            total: 3
+        },
+        {
+            gameID: 4,
+            playerUsername: 'btaylor',
+            playerName: 'Brandon Taylor',
+            type: 'TIP',
+            total: 1
+        },
+        {
+            gameID: 4,
+            playerUsername: 'jowens',
+            playerName: 'Jase Owens',
+            type: 'KILL',
+            total: 1
+        },
+        {
+            gameID: 4,
+            playerUsername: 'jowens',
+            playerName: 'Jase Owens',
+            type: 'SET',
+            total: 2
+        },
+        {
+            gameID: 4,
+            playerUsername: 'jowens',
+            playerName: 'Jase Owens',
+            type: 'ACE',
+            total: 3
+        },
+        {
+            gameID: 4,
+            playerUsername: 'jowens',
+            playerName: 'Jase Owens',
+            type: 'TIP',
+            total: 2
+        },
+        {
+            gameID: 4,
+            playerUsername: 'jowens',
+            playerName: 'Jase Owens',
+            type: 'UFE',
+            total: 3
+        },
+        {
+            gameID: 4,
+            playerUsername: 'jcox',
+            playerName: 'Jackie Cox',
+            type: 'KILL',
+            total: 5
+        },
+        {
+            gameID: 4,
+            playerUsername: 'jcox',
+            playerName: 'Jackie Cox',
+            type: 'SET',
+            total: 3
+        },
+        {
+            gameID: 4,
+            playerUsername: 'jcox',
+            playerName: 'Jackie Cox',
+            type: 'ACE',
+            total: 3
+        },
+        {
+            gameID: 4,
+            playerUsername: 'jcox',
+            playerName: 'Jackie Cox',
+            type: 'TIP',
+            total: 1
+        },
+        {
+            gameID: 4,
+            playerUsername: 'jcox',
+            playerName: 'Jackie Cox',
+            type: 'UFE',
+            total: 6
+        },
+        {
+            gameID: 4,
+            playerUsername: 'ndalton',
+            playerName: 'Natalie Dalton',
+            type: 'KILL',
+            total: 1
+        },
+        {
+            gameID: 4,
+            playerUsername: 'ndalton',
+            playerName: 'Natalie Dalton',
+            type: 'DIG',
+            total: 1
+        },
+        {
+            gameID: 4,
+            playerUsername: 'ndalton',
+            playerName: 'Natalie Dalton',
+            type: 'UFE',
+            total: 6
+        },
+        {
+            gameID: 4,
+            playerUsername: 'tcox',
+            playerName: 'Thomas Cox',
+            type: 'KILL',
+            total: 2
+        },
+        {
+            gameID: 4,
+            playerUsername: 'tcox',
+            playerName: 'Thomas Cox',
+            type: 'BLOCK',
+            total: 1
+        },
+        {
+            gameID: 4,
+            playerUsername: 'tcox',
+            playerName: 'Thomas Cox',
+            type: 'TIP',
+            total: 1
+        },
+        {
+            gameID: 4,
+            playerUsername: 'tcox',
+            playerName: 'Thomas Cox',
+            type: 'UFE',
+            total: 4
+        },
+        {
+            gameID: 4,
+            playerUsername: 'dwalker',
+            playerName: 'Darrell Walker',
+            type: 'KILL',
+            total: 1
+        },
+        {
+            gameID: 4,
+            playerUsername: 'dwalker',
+            playerName: 'Darrell Walker',
+            type: 'TIP',
+            total: 2
+        },
+        {
+            gameID: 4,
+            playerUsername: 'dwalker',
+            playerName: 'Darrell Walker',
+            type: 'UFE',
+            total: 2
+        },
+        {
+            gameID: 4,
+            playerUsername: 'kgoodwin',
+            playerName: 'Katelyn Goodwin',
+            type: 'SET',
+            total: 2
+        },
+        {
+            gameID: 4,
+            playerUsername: 'kgoodwin',
+            playerName: 'Katelyn Goodwin',
+            type: 'TIP',
+            total: 1
+        },
+        {
+            gameID: 4,
+            playerUsername: 'kgoodwin',
+            playerName: 'Katelyn Goodwin',
+            type: 'UFE',
+            total: 2
+        },
+        {
+            gameID: 4,
+            playerUsername: 'jwalker',
+            playerName: 'Joy Walker',
+            type: 'KILL',
+            total: 2
+        },
+        {
+            gameID: 4,
+            playerUsername: 'jwalker',
+            playerName: 'Joy Walker',
+            type: 'ACE',
+            total: 1
+        },
+        {
+            gameID: 4,
+            playerUsername: 'jwalker',
+            playerName: 'Joy Walker',
+            type: 'UFE',
+            total: 1
+        },
+        {
+            gameID: 4,
+            playerUsername: 'tvaughn',
+            playerName: 'Tyler Vaughn',
+            type: 'KILL',
+            total: 1
+        },
+        {
+            gameID: 4,
+            playerUsername: 'tvaughn',
+            playerName: 'Tyler Vaughn',
+            type: 'UFE',
+            total: 8
+        },
+        {
+            gameID: 4,
+            playerUsername: 'jorwalker',
+            playerName: 'Jordan Walker',
+            type: 'KILL',
+            total: 3
+        },
+        {
+            gameID: 4,
+            playerUsername: 'jorwalker',
+            playerName: 'Jordan Walker',
+            type: 'TIP',
+            total: 3
+        },
+        {
+            gameID: 4,
+            playerUsername: 'jorwalker',
+            playerName: 'Jordan Walker',
+            type: 'UFE',
+            total: 1
+        },
+        {
+            gameID: 4,
+            playerUsername: 'arape',
+            playerName: 'Anna Rape',
+            type: 'KILL',
+            total: 1
+        },
+        {
+            gameID: 4,
+            playerUsername: 'arape',
+            playerName: 'Anna Rape',
+            type: 'ACE',
+            total: 2
+        },
+        {
+            gameID: 4,
+            playerUsername: 'arape',
+            playerName: 'Anna Rape',
+            type: 'UFE',
+            total: 3
+        },
+        {
+            gameID: 4,
+            playerUsername: 'awillingham',
+            playerName: 'Allison Willingham',
+            type: 'DIG',
+            total: 2
+        },
+        {
+            gameID: 4,
+            playerUsername: 'awillingham',
+            playerName: 'Allison Willingham',
+            type: 'ACE',
+            total: 2
         }
     ]);
 console.log("Created Stats table and test Stats");
