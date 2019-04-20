@@ -11,7 +11,7 @@ const Game = require('../models/game');
 const Common = require('../Common');
 
 //http://localhost:8080/api/game/
-gameRoutes.get('/', Common.verifyToken, function(req,res) {
+gameRoutes.get('/', function(req,res) {
     //Return all games as json object, after verifying user
     Game.findAll({})
     .then(games => {
