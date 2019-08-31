@@ -26,16 +26,6 @@ app.set('superSecret', config);
 
 app.use(cors());
 
-//Should let use localhost to connect to server, need to look into implications of
-//using this live.
-// app.use(function(req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Credentials", "true");
-//     res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-//     res.header("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
-//     next();
-// });
-
 //Middleware for body parsing
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
@@ -47,7 +37,7 @@ const apiRoutes = require('./api/api')
 app.use('/api', apiRoutes);
 
 //Set port
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 5432;
 
 //Signup route, needs to be fully implemented, is hardcoded as of now.
 app.post('/signup', function(req,res){
